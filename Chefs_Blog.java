@@ -1,56 +1,76 @@
 package codechef;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Chefs_Blog {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the number of test cases: ");
-		int T = sc.nextInt();
+		String str = sc.nextLine();
+		int l = str.length();
 		
-		while(T!=0) 
+		int count1=0;
+		int count2=0;
+		int count3=0;
+		int count4=0;
+		int count5=0;
+		
+		for(int i=0;i<l;i++)
 		{
-			T = T -1;
-			System.out.println("Please Enter the number fo days: ");
-			int n = sc.nextInt();
-			System.out.println("Enter min number of quetions to be anwered: ");
-			int k = sc.nextInt();
 			
-			int[] quetions = new int[n];
-			
-			for(int i=0;i<n;i++)
+			if(str.charAt(i)=='a')
 			{
-				System.out.println("Enter number of quetions asked at "+i+"th day : ");
-				quetions[i] = sc.nextInt();
+				count1 = count1 +1;
+				//System.out.println(str.charAt(i)+":"+count1);
 			}
 			
-			int count =0;
-			int j=0;
-			int count1=0;
 			
-			for(int i=0;i<n;i++)
+			if(str.charAt(i)=='e')
 			{
-				
-				int x = quetions[i];
-					if((x-k)>k) 
-					{
-						count = count + (x-k);
-					}
-					System.out.println("To be anwered : "+count);
-					count1++;
-					System.out.println(count1);
+				count2 = count2+1;
+				//System.out.println(str.charAt(i)+":"+count2);
 			}
 			
-			while(count!=0)
+			//int count3=0;
+			if(str.charAt(i)=='i')
 			{
-				count = count - k;
-				j++;
-				System.out.print(j);
+				count3=count3+1;
+				//System.out.println(str.charAt(i)+":"+count3);
+			}
+			
+			//int count4=0;
+			if(str.charAt(i)=='o')
+			{
+				count4=count4+1;
+				//System.out.println(str.charAt(i)+":"+count4);
+			}
+			
+			//int count5=0;
+			if(str.charAt(i)=='u')
+			{
+				count5=count5+1;
+				//System.out.println(str.charAt(i)+":"+count5);
 			}
 		}
 		
-	}
+		System.out.println("a:"+count1);
+		System.out.println("e:"+count2);
+		System.out.println("i:"+count3);
+		System.out.println("o:"+count4);
+		System.out.println("u:"+count5);
+		
+		for(int i=0;i<str.length();i++)
+		{
+			if((str.charAt(i)!='a')&&(str.charAt(i)!='e')&&(str.charAt(i)!='o')&&(str.charAt(i)!='i')&&(str.charAt(i)!='u'))
+			{
+				System.out.print(str.charAt(i));
+			}
+		}
+		
+		
+		
+		}
 
 }
+
